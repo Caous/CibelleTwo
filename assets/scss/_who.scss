@@ -1,0 +1,120 @@
+#s-who {
+  padding: 64px 0px;
+  background-color: $color-dark-secondary;
+
+  @include responsive-desktop {
+    padding: $gap-40 0px;
+  }
+
+  .grid-layout {
+    h2 {
+      text-align: center;
+      font-size: 3.2rem;
+      margin-bottom: 80px;
+      font-weight: 600;
+
+      b {
+        background: $color-primary;
+        background-clip: text;
+        color: transparent;
+        font-weight: 600;
+      }
+
+      @include responsive-desktop {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+      }
+    }
+
+    .who-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 56px 32px;
+
+      div {
+        width: 29%;
+        flex-grow: 1;
+
+        @include responsive-desktop {
+          width: 47%;
+        }
+
+        @include responsive-tablet {
+          width: 100%;
+        }
+
+        h3 {
+          padding: 12px;
+          border-radius: 8px;
+          background-color: #272727;
+          font-size: 2.4rem;
+          display: inline-block;
+          margin-bottom: 24px;
+          border: 2px solid #3f3f3f;
+        }
+
+        p {
+          font-size: 2.4rem;
+          line-height: 160%;
+          color: #fff;
+        }
+      }
+    }
+
+    > span {
+      display: grid;
+      place-items: center;
+
+      .whatsapp {
+        width: auto;
+        background: #139d01;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        padding: 16px 40px;
+        gap: 16px;
+
+        img {
+          width: 32px;
+
+          @include responsive-desktop {
+            display: none;
+          }
+        }
+
+        button {
+          font-weight: 500;
+          font-size: 2rem;
+          color: $color-white;
+          cursor: pointer;
+          background: transparent;
+
+          @include responsive-desktop {
+            font-size: 1.8rem;
+          }
+        }
+      }
+
+      .normal {
+        @include responsive-desktop {
+          width: 100%;
+        }
+
+        button {
+          border-radius: 0px 8px 0px 8px;
+          padding: 16px 40px;
+          background: $color-secondary;
+          font-weight: 500;
+          font-size: 2rem;
+          color: $color-white;
+          cursor: pointer;
+
+          @include responsive-desktop {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

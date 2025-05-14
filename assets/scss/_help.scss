@@ -1,0 +1,170 @@
+#s-help {
+  padding: 64px 0px;
+
+  @include responsive-desktop {
+    padding: $gap-40 0px;
+  }
+
+  .grid-layout {
+    h2 {
+      text-align: center;
+      font-size: 3.2rem;
+      width: 60%;
+      margin: 0 auto 80px auto;
+      font-weight: 600;
+
+      b {
+        background: $color-primary;
+        background-clip: text;
+        color: transparent;
+        font-weight: 600;
+      }
+
+      @include responsive-desktop {
+        width: 100%;
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+      }
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .cards-help {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+
+      > article {
+        width: 30%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        border-radius: 6px;
+        background-color: $color-dark-secondary;
+        border: 2px solid $color-dark-border;
+        text-align: center;
+        padding: 24px;
+
+        @include responsive-desktop {
+          width: 45%;
+        }
+
+        @include responsive-tablet {
+          width: 100%;
+        }
+
+        > h3 {
+          font-size: 2.4rem;
+          margin-top: 12px;
+          font-family: $font-description;
+          font-weight: 400;
+
+          @include responsive-desktop {
+            font-size: 2rem;
+          }
+        }
+
+        > img {
+          width: 32px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .cards-null {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin: 56px 0px;
+
+      > article {
+        width: 30%;
+        flex-grow: 1;
+        height: auto;
+        text-align: center;
+
+        @include responsive-desktop {
+          width: 100%;
+        }
+
+        > h3 {
+          font-size: 2.4rem;
+          margin-top: 12px;
+          font-family: $font-description;
+          font-weight: 400;
+          margin-bottom: 24px;
+        }
+
+        > p {
+          font-size: 2rem;
+          line-height: 160%;
+          color: $color-gray;
+        }
+
+        > img {
+          width: 48px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .whatsapp {
+      width: auto;
+      background: #139d01;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 16px 40px;
+      gap: 16px;
+
+      img {
+        width: 32px;
+
+        @include responsive-desktop {
+          display: none;
+        }
+      }
+
+      button {
+        font-weight: 500;
+        font-size: 2rem;
+        color: $color-white;
+        cursor: pointer;
+        background: transparent;
+
+        @include responsive-desktop {
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    .normal {
+      @include responsive-tablet {
+        width: 100%;
+      }
+
+      button {
+        border-radius: 0px 8px 0px 8px;
+        padding: 16px 40px;
+        background: $color-secondary;
+        font-weight: 500;
+        font-size: 2rem;
+        color: $color-white;
+        cursor: pointer;
+
+        @include responsive-desktop {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

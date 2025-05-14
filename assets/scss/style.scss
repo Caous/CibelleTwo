@@ -1,0 +1,102 @@
+@import "./variables", "./reset", "./menu", "./home", "./who", "./help",
+  "./aboutme";
+
+.grid-layout {
+  @include grid-layout();
+}
+
+#foto-cibelle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -2;
+}
+
+footer {
+  background-color: $color-dark-secondary;
+  padding: 48px;
+  text-align: center;
+
+  @include responsive-desktop {
+    padding: 48px 24px;
+  }
+
+  h2 {
+    margin-bottom: 16px;
+    font-size: 2.4rem;
+    font-family: $font-description;
+    font-weight: 600;
+
+    b {
+      background: $color-primary;
+      background-clip: text;
+      color: transparent;
+      font-weight: 600;
+    }
+
+    @include responsive-desktop {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 2rem;
+    color: $color-gray;
+    font-weight: 500;
+
+    @include responsive-desktop {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 48%;
+
+  @include responsive-desktop {
+    width: 100%;
+  }
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+}
+
+.toast {
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 2rem;
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.3s forwards, fadeOut 0.3s 2.7s forwards;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}

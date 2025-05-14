@@ -1,0 +1,158 @@
+#s-home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include responsive-desktop {
+    padding: 100px 0px;
+    min-height: auto;
+    margin-top: 200px;
+  }
+
+  .grid-layout {
+    #container-home {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: $gap-96;
+
+      @include responsive-desktop {
+        flex-wrap: wrap;
+        gap: $gap-48;
+      }
+
+      #info-main {
+        width: 55%;
+
+        @include responsive-desktop {
+          width: 100%;
+        }
+
+        h1 {
+          font-size: 3.8rem;
+          font-weight: 600;
+          line-height: 130%;
+
+          background: $color-primary;
+          background-clip: text;
+          color: transparent;
+
+          @include responsive-desktop {
+            width: 100%;
+            font-size: 3.2rem;
+          }
+        }
+
+        h3 {
+          text-align: center;
+          margin-top: 40px;
+          font-size: 2.2rem;
+          font-weight: 600;
+          line-height: 130%;
+
+          #countdown {
+            background: $color-primary;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+          }
+        }
+
+        > p {
+          font-size: 3.2rem;
+          line-height: 150%;
+          color: $color-white;
+          font-weight: 500;
+          margin: 32px 0 40px 0;
+
+          @include responsive-desktop {
+            font-size: 2.2rem;
+          }
+        }
+
+        input {
+          width: 100%;
+          padding: 16px 40px;
+          margin-bottom: 32px;
+          border-radius: 8px;
+          padding-left: 20px;
+          font-size: 2rem;
+
+          @include responsive-desktop {
+            font-size: 1.8rem;
+          }
+        }
+
+        .lista {
+          width: 100%;
+          background: #139d01;
+          border-radius: 8px;
+          padding: 16px 40px;
+          font-size: 2rem;
+          color: $color-white;
+          cursor: pointer;
+
+          @include responsive-desktop {
+            font-size: 1.8rem;
+          }
+
+          &:hover {
+            background: #138b04;
+          }
+        }
+
+        .whatsapp {
+          width: auto;
+          background: #139d01;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
+          padding: 16px 40px;
+          gap: 16px;
+
+          img {
+            width: 32px;
+
+            @include responsive-desktop {
+              display: none;
+            }
+          }
+
+          button {
+            font-weight: 500;
+            font-size: 2rem;
+            color: $color-white;
+            cursor: pointer;
+            background: transparent;
+
+            @include responsive-desktop {
+              font-size: 1.8rem;
+            }
+          }
+        }
+
+        .normal {
+          @include responsive-tablet {
+            width: 100%;
+          }
+
+          button {
+            border-radius: 0px 8px 0px 8px;
+            padding: 16px 40px;
+            background: $color-secondary;
+            font-weight: 500;
+            font-size: 2rem;
+            color: $color-white;
+            cursor: pointer;
+
+            @include responsive-tablet {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
