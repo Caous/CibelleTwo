@@ -54,7 +54,7 @@ function enviarFormulario(e) {
   }
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbyDeE1odSDyMeQEGDwtOFFNo4K5eRn_T9-BZIQtRHqkU51SF3S65h_t6usyX7s_XGFTfw/exec",
+    "https://script.google.com/macros/s/AKfycby-HaY4Fk1K9TqAolL-qB8V0wEBoOzO1_CLMni3b89vAp5EfoKVh7m5uD0zVCg_BSv62w/exec",
     {
       method: "POST",
       body: new URLSearchParams({ nome, email }),
