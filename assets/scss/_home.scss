@@ -1,5 +1,5 @@
 #s-home {
-  min-height: 100vh;
+  padding: 100px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@
       }
 
       #info-main {
-        width: 55%;
+        width: 60%;
 
         @include responsive-desktop {
           width: 100%;
@@ -46,16 +46,27 @@
 
         h3 {
           text-align: center;
-          margin-top: 40px;
-          font-size: 2.2rem;
+          margin-top: 64px;
+          font-size: 3.2rem;
           font-weight: 600;
           line-height: 130%;
+
+          b {
+            background: $color-primary;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+          }
 
           #countdown {
             background: $color-primary;
             background-clip: text;
             color: transparent;
             font-weight: 600;
+          }
+
+          @include responsive-desktop {
+            font-size: 2.4rem;
           }
         }
 

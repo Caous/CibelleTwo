@@ -47,24 +47,48 @@
             <div id="info-main">
               <h1>
                 Descubra como organizar a sua vida financeira, com apenas 15
-                minutos por semana, de forma prática e direta.
+                minutos por semana, e fazendo o dinheiro sobrar todos os meses.
               </h1>
               <p>
-                Nesta aula, você vai aprender a organizar as finanças e traçar o
-                seu plano para conquistar o seu primeiro milhão de reais.
+                A Aula Recomeço Financeiro vai ocorrer no dia 05 de junho, às 20
+                horas, e será 100% online e 100% gratuita.
               </p>
 
-              <input type="text" id="nome" placeholder="Seu nome completo" />
-              <input type="email" id="email" placeholder="exemplo@email.com" />
+              <form onsubmit="enviarFormulario(event)">
+                <input
+                  type="text"
+                  name="nome"
+                  id="nome"
+                  placeholder="Seu nome completo"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="exemplo@email.com"
+                />
 
-              <button onclick="enviarParaWhatsapp()" class="lista">
-                Garanta a sua vaga
-              </button>
+                <button type="submit" class="lista">Garanta a sua vaga</button>
+              </form>
 
-              <h3>
-                Inscreva-se agora. A aula começa em:
-                <b id="countdown">Carregando...</b>
-              </h3>
+              <h3>Inscreva-se agora. <b>A aula começa em:</b></h3>
+
+              <div class="countdown-container">
+                <div class="countdown">
+                  <div class="card">
+                    <span id="days">0</span><small>dias</small>
+                  </div>
+                  <div class="card">
+                    <span id="hours">00</span><small>horas</small>
+                  </div>
+                  <div class="card">
+                    <span id="minutes">00</span><small>minutos</small>
+                  </div>
+                  <div class="card">
+                    <span id="seconds">00</span><small>segundos</small>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -72,29 +96,28 @@
 
       <section id="s-help">
         <div class="grid-layout">
-          <h2>
-            Olha o que te aguarda na nossa aula do
-            <b>dia 05/06/2025, às 20 horas:</b>
-          </h2>
+          <h2>Entregáveis do evento <b>Recomeço Financeiro:</b></h2>
 
           <div>
             <div class="cards-help">
               <article>
                 <img src="./assets/images/icons/diamante.svg" alt="Ícone" />
-                <h3>Aprender como organizar a sua vida financeira.</h3>
-              </article>
-
-              <article>
-                <img src="./assets/images/icons/porco.svg" alt="Ícone" />
-                <h3>
-                  Entender como traçar seu plano para conquistar seu primeiro
-                  milhão de reais.
-                </h3>
+                <h3>Aula exclusiva</h3>
+                <h4>
+                  Na Aula Recomeço Financeiro você vai aprender a reconstruir a
+                  sua estabilidade financeira, com apenas 15 minutas por semana,
+                  fazendo o dinheiro sobrar todos os meses.
+                </h4>
               </article>
 
               <article>
                 <img src="./assets/images/icons/coroa.svg" alt="Ícone" />
-                <h3>Material para colocar em prática o que você aprendeu.</h3>
+                <h3>Grupo no WhatsApp</h3>
+                <h4>
+                  Você vai ter acesso a um grupo exclusivo no Whatsapp. Lá você
+                  vai receber todas as atividades e informações de acesso da
+                  Aula Recomeço Financeiro.
+                </h4>
               </article>
             </div>
           </div>
@@ -103,49 +126,27 @@
 
       <section id="s-who">
         <div class="grid-layout">
-          <h2><b>Para quem é</b> a aula?</h2>
+          <h2>Olha o que você vai <b>conquistar ao final do evento:</b></h2>
 
           <div class="who-card">
             <div>
               <h3>💰</h3>
-              <p>
-                Para quem está com a vida financeira bagunçada, não sabem quanto
-                entra de receita nem quanto gastam.
-              </p>
-            </div>
-
-            <div>
-              <h3>🥲</h3>
-              <p>
-                Para aquelas pessoas que já tentaram de tudo para organizar a
-                vida financeira e não conseguiram.
-              </p>
-            </div>
-
-            <div>
-              <h3>💸</h3>
-              <p>
-                Para quem gasta o salário do mês todo e não sabe como fazer o
-                dinheiro sobrar todos os meses.
-              </p>
-            </div>
-
-            <div>
-              <h3>✈️</h3>
-              <p>
-                Para quem não sabe o que fazer para construir riqueza e planejar
-                a sua liberdade financeira.
-              </p>
+              <p>Aprender a organizar sua vida financeira da forma correta.</p>
             </div>
 
             <div>
               <h3>📉</h3>
-              <p>Para quem tem dívidas e não sabe como começar a quitá-las.</p>
+              <p>
+                Entender porque tudo que você tentou até agora não funcionou.
+              </p>
             </div>
 
             <div>
-              <h3>📊</h3>
-              <p>Para quem não tem controle financeiro.</p>
+              <h3>📁</h3>
+              <p>
+                Baixar o material necessário para colocar em prática o que você
+                aprendeu.
+              </p>
             </div>
           </div>
         </div>

@@ -1,27 +1,34 @@
-const countdownElement = document.getElementById("countdown");
-const targetDate = new Date("2025-06-05T20:00:00-03:00");
+// Data do evento: 5 de junho de 2025 às 20h00 (horário de Brasília)
+const targetDate = new Date("2025-06-05T20:00:00-03:00").getTime();
 
-function updateCountdown() {
-  const now = new Date();
-  const difference = targetDate - now;
+const countdown = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
 
-  if (difference <= 0) {
-    countdownElement.textContent = "🚀 A aula já começou!";
-    clearInterval(interval);
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.querySelector(".countdown").innerHTML = "A live começou! 🎉";
     return;
   }
 
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((difference / (1000 * 60)) % 60);
-  const seconds = Math.floor((difference / 1000) % 60);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-}
-
-const interval = setInterval(updateCountdown, 1000);
-updateCountdown();
-
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(
+    2,
+    "0"
+  );
+  document.getElementById("seconds").textContent = String(seconds).padStart(
+    2,
+    "0"
+  );
+}, 1000);
 function showToast(message) {
   const toastContainer = document.getElementById("toastContainer");
   const toast = document.createElement("div");
@@ -35,18 +42,25 @@ function showToast(message) {
   }, 3000);
 }
 
-function enviarParaWhatsapp() {
-  const nome = document.getElementById("nome").value;
-  const email = document.getElementById("email").value;
+function enviarFormulario(e) {
+  e.preventDefault();
+  const form = e.target;
+  const nome = form.nome.value;
+  const email = form.email.value;
 
   if (!nome || !email) {
     showToast("Preencha seu nome e e-mail");
     return;
   }
 
-  const mensagem = `Olá Cibelle! Me chamo ${nome}, tenho interesse no Método RP! Meu email é ${email}`;
-  const numero = "557399088522";
-
-  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-  window.open(url, "_blank");
+  fetch(
+    "https://script.google.com/macros/s/AKfycbyDeE1odSDyMeQEGDwtOFFNo4K5eRn_T9-BZIQtRHqkU51SF3S65h_t6usyX7s_XGFTfw/exec",
+    {
+      method: "POST",
+      body: new URLSearchParams({ nome, email }),
+    }
+  ).then(() => {
+    showToast("Dados enviados com sucesso");
+    form.reset();
+  });
 }
