@@ -61,6 +61,13 @@ function enviarFormulario(e) {
     }
   ).then(() => {
     showToast("Dados enviados com sucesso");
+
+    const mensagem = `Olá Cibelle! Me chamo ${nome}, tenho interesse no Método RP! Meu email é ${email}`;
+    const numero = "557399088522";
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+
     form.reset();
   });
 }
