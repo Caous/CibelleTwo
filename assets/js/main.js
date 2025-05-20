@@ -29,6 +29,7 @@ const countdown = setInterval(() => {
     "0"
   );
 }, 1000);
+
 function showToast(message) {
   const toastContainer = document.getElementById("toastContainer");
   const toast = document.createElement("div");
@@ -39,7 +40,7 @@ function showToast(message) {
 
   setTimeout(() => {
     toast.remove();
-  }, 3000);
+  }, 6000);
 }
 
 function enviarFormulario(e) {
@@ -62,10 +63,8 @@ function enviarFormulario(e) {
   ).then(() => {
     showToast("Dados enviados com sucesso");
 
-    const mensagem = `Olá Cibelle! Me chamo ${nome}, tenho interesse no Método RP! Meu email é ${email}`;
-    const numero = "557399088522";
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    const url = `https://chat.whatsapp.com/CkDE3lUTxRDKVjLGZOfeJ3`;
     window.open(url, "_blank");
 
     form.reset();
